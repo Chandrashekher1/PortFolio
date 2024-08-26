@@ -1,51 +1,21 @@
-const portfolio = [
-    { 
-        name:"Chandrashekher Prasad",
-        work:"2nd Year B.Tech Student",
-        img: "assets/photo_2024-08-15_22-51-40.jpg",     
-        github:"https://github.com/Chandrashekher1",    
-        twitter:"https://x.com/cpsaw03?t=78xY-iHc1XMeqbyew_ozvg",
-        
-    }
-    ,{  
-        img : "assets/photo_2024-08-15_22-51-40.jpg",
-        passion:"Frontend Developer",
-        about:"Hi, I'm Chandrashekher, pursuing a B.Tech at Maharaja Agrasen Institue of Technology, New Delhi.\n<br><br>\n Currently I'm in my second year and enhancing my skills in data structures and algorithms using <span>Java</span>.\nI have a strong foundation in <span>HTML</span>, <span>CSS</span>, and I am currently learning <span>React JS</span>.\nAdditionally, I am proficient in other programming languages such as <span>C</span>, <span>Python</span>, and <span>JavaScript</span>.\n<br><br>\nFeel free to connect with me for any collaboration or opportunities. ", 
-    },
-    {
-        title : "PROJECTS",
-        pro1Link :"https://github.com/Chandrashekher1/Web-Dev-Practice/tree/master/Projects/Github-Profile",
-        pro1Name : "GITHUB Profiles",
-        pro1Img:"assets/Screenshot 2024-08-15 221728.png",
-        pro1Uses:"Uses GitHub Api to fetch details of a user"
-    },
+async function loadPortfolioData(){
+    try{
+        const response=await fetch('data.json')
+        if(!response.ok){
+            throw new Error('Error fetching data')
+        }
+        const data=await response.json()
+        HomePage(data.name)
+        AboutPage(data.aboutMe)
+        ProjectPage(data.projects)
+        handleLoader()
 
-    {
-        pro2Link:"https://github.com/Chandrashekher1/Web-Dev-Practice/tree/master/Projects/Notes-Apps",
-        pro2Img: "assets/Screenshot 2024-08-18 214606.png",
-        pro2Name:"Notes App",
-        pro2Uses:"Make multiple note pads with the ability to store them locally on browser"
-    },
-    {
-        pro3Link:"https://github.com/Chandrashekher1/Web-Dev-Practice/tree/master/Projects/Insect-Catch-Game",
-        pro3Img: "assets/Screenshot 2024-08-18 215019.png",
-        pro3Name:"Insect Catch Game",
-        pro3Uses:"Small Game to catch as many insects present on th screen"
-    },
-    {
-        pro4Link:"https://github.com/Chandrashekher1/Web-Dev-Practice/tree/master/Projects/Todo-List",
-        pro4Img: "assets/Screenshot 2024-08-18 215215.png",
-        pro4Name:"Todo lists",
-        pro4Uses:"Create your own to do lists"
-    },
-    {
-        pro5Link:"https://github.com/Chandrashekher1/Web-Dev-Practice/tree/master/Projects/Timer",
-        pro5Img: "assets/Screenshot 2024-08-18 215735.png",
-        pro5Name:"Timer Website ",
-        pro5Uses:"Set timer on website "
     }
-    
-]
+    catch (error){
+        console.error(error)
+    }
+}
+
 
 function startTextAnimation(textArr) {
     const profession = document.querySelector('.text');
@@ -85,27 +55,26 @@ navBar.forEach((item, idx) => {
         });
     });
 });
-
+loadPortfolioData();
 // Home
 const Home = document.querySelector(".Home")
 HomePage()
-function HomePage(){
-    const { name, work, img,github ,twitter} = portfolio[0]
+function HomePage(name,work){
     const HomeHtml = `
         <div class="home-contact">
             <h3>Hello, I'm</h3>
             <h1 class="name">${name}</h1>
-            <h3>And I'm a  <span class="text">${work}</span></h3>
+            <h3>And I'm a  <span class="text"></span></h3>
             <p></p>
             <div class="social">
-                <a href="${github}"><i class='fab fa-github'></i></a>
-                <a href="${twitter}"><i class='fab fa-twitter'></i></a>
+                <a href="https://github.com/Chandrashekher1""><i class='fab fa-github'></i></a>
+                <a href="https://x.com/cpsaw03?t=78xY-iHc1XMeqbyew_ozvg"><i class='fab fa-twitter'></i></a>
                 <a href="#"><i class='fab fa-linkedin'></i></a>
             </div>
             <a href="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWsmCKlSLfQKSZVwWsXDWfkVVVjmKKbxDqHSDxxwXFkRPsCCknPwtzZzlXtBrzZzMmCvHvSLl"> <br><br><button class="hi">Get In Touch!</button></a>
 
         </div>
-        <img src="${img}" alt="">`
+        <img src="assets/photo_2024-08-15_22-51-40.jpg" alt="">`
 
     Home.innerHTML = HomeHtml
     startTextAnimation(["2nd Year B.Tech Student", "Front-End Developer", "Tech Enthusiast"]);
@@ -115,15 +84,14 @@ function HomePage(){
 
 const About = document.getElementById("about")
 AboutPage()
-function AboutPage(){
-    const {img, about,passion} = portfolio[1];
+function AboutPage(aboutMe){
     const AboutHtml = `
         <h2>About <span>Me</span></h2>
         <div class="about-img">
-            <img src="${img}" alt="" class="abImg">
+            <img src="assets/photo_2024-08-15_22-51-40.jpg" alt="" class="abImg">
         </div>
         <div class="about-text">
-            <p>${about}</p>
+            <p>${aboutMe}</p>
         </div>
         
 
@@ -132,68 +100,48 @@ function AboutPage(){
 
 }
 
-// Project
-const Project = document.getElementById("project");
+function ProjectPage(projects) {
+    const projectsContainer = document.getElementById('project'); 
+    // Loop through each project and add its corresponding HTML
+    projects.forEach(project => {
+        const projElement = document.createElement('div'); 
+        projElement.classList.add('container'); 
 
-function ProjectPage() {
-    const { title, pro1Img, pro1Link, pro1Uses, pro1Name } = portfolio[2];
-    const { pro2Img, pro2Link, pro2Name, pro2Uses } = portfolio[3];
-    const { pro3Img, pro3Link, pro3Name, pro3Uses } = portfolio[4];
-    const { pro4Img, pro4Link, pro4Name, pro4Uses } = portfolio[5];
-    const { pro5Img, pro5Link, pro5Name, pro5Uses } = portfolio[6];
+        // Use innerHTML to construct the project HTML structure
+        projElement.innerHTML = `
+            <div class="pro1">
+                <div class="pro1Img">
+                    <img src="${project.img}" alt="">
+                </div>
+                <h2 class="projectName">${project.name}</h2>
+                <p class="projectDesc">${project.description}</p>
+                <a href="${project.link}" class="projectLink"><i class="fab fa-github"></i></a>
+            </div>
+        `;
 
-    const ProjHtml = `
-        <h1>${title}</h1>
-        <div class="container">
-            <div class="pro1">
-                <div class="pro1Img">
-                    <img src="${pro1Img}" alt="">
-                </div>
-                <h2 class="projectName">${pro1Name}</h2>
-                <p class="projectDesc">${pro1Uses}</p>
-                <a href="${pro1Link}" class="projectLink"><i class="fab fa-github"></i></a>
-            </div>
-            <div class="pro1">
-                <div class="pro1Img">
-                    <img src="${pro2Img}" alt="">
-                </div>
-                <h2 class="projectName">${pro2Name}</h2>
-                <p class="projectDesc">${pro2Uses}</p>
-                <a href="${pro2Link}" class="projectLink"><i class="fab fa-github"></i></a>
-            </div>
-            <div class="pro1">
-                <div class="pro1Img">
-                    <img src="${pro3Img}" alt="">
-                </div>
-                <h2 class="projectName">${pro3Name}</h2>
-                <p class="projectDesc">${pro3Uses}</p>
-                <a href="${pro3Link}" class="projectLink"><i class="fab fa-github"></i></a>
-            </div>
-            <div class="pro1">
-                <div class="pro1Img">
-                    <img src="${pro4Img}" alt="">
-                </div>
-                <h2 class="projectName">${pro4Name}</h2>
-                <p class="projectDesc">${pro4Uses}</p>
-                <a href="${pro4Link}" class="projectLink"><i class="fab fa-github"></i></a>
-            </div>
-            <div class="pro1">
-                <div class="pro1Img">
-                    <img src="${pro5Img}" alt="">
-                </div>
-                <h2 class="projectName">${pro5Name}</h2>
-                <p class="projectDesc">${pro5Uses}</p>
-                <a href="${pro5Link}" class="projectLink"><i class="fab fa-github"></i></a>
-            </div>
-        </div>
-    `;
-
-    Project.innerHTML = ProjHtml;
+        // Append the project element to the projectsContainer
+        projectsContainer.appendChild(projElement);
+    });
 }
 
-// Call the function to render projects
-ProjectPage();
 
+
+
+
+function renderProjects(projects){
+    const projectsContainer = document.getElementById('.project')
+    projects.forEach(project => {
+        const projElement = document.createElement('div');
+        projElement.classList.add('project');
+        projElement.innerHTML=`
+             <i class="far fa-folder project-img"></i>
+             <h2 class="projectName">${project.name}</h2>
+             <p class="projectDesc">${project.description}</p>
+             <a href="${project.link}" class="projectLink"><i class="fab fa-github"></i></a>
+        `
+        projectsContainer.appendChild(projElement)
+    })
+}
 
 // Contact 
 

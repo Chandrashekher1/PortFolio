@@ -439,21 +439,20 @@ body{
     width: 100vw;
     padding: 70px 10% 0;
     text-align: center;
+    align-items: center;
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
     box-shadow: 5px 5px 10px #012290f7,
-    5px 5px 40px #081b29, 5px 5px 40px #051129; 
+    5px 5px 40px #081b29; 
 }
-#project h1{
+.Ph1{
     color: yellow;
     font-size: 50px;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
 
-}
-.container{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 50px 0px;
-}
 .pro1{
     height: 20rem;
     width: 18rem;
@@ -491,6 +490,10 @@ body{
 .projectLink:hover{
     color: #FFD700;
     transform: scale(1.5);
+}
+
+.container{
+    display: flex;
 }
 .container .pro1{
     box-shadow: 5px 5px 10px #012290f7,
@@ -530,8 +533,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-   
+    text-align: center;  
 }
 .contact h1{
     font-size: 50px;
@@ -541,6 +543,7 @@ body{
 .container-con{
     box-shadow: 5px 5px 10px #012290f7,
     5px 5px 40px #081b29, 5px 5px 40px #051129;
+    
     
 }
 .container-con:hover{
@@ -799,7 +802,7 @@ body{
     }
     .skill{
         box-shadow: none;
-        height: 150vh;
+        height: 200vh;
         width: 100vw;
     }
     .skill h1{
@@ -808,6 +811,7 @@ body{
     .skill .using,.learning img{
        display: flex;
        flex-wrap: wrap;
+       
     }
     .contact{
         height: 50vh;

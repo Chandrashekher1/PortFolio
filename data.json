@@ -1,0 +1,42 @@
+{
+    "name": "Chandrashekher Prasad",
+    "mainAbout": [
+      "2nd Year B.tech Student",
+      "FrontEnd Developer",
+      "Tech Enthusiast"
+    ],
+    "aboutMe": "Hi, I'm Chandrashekher, pursuing a B.Tech at Maharaja Agrasen Institue of Technology, New Delhi.\n<br><br>\n Currently I'm in my second year and enhancing my skills in data structures and algorithms using <span>Java</span>.\nI have a strong foundation in <span>HTML</span>, <span>CSS</span>, and I am currently learning <span>React JS</span>.\nAdditionally, I am proficient in other programming languages such as <span>C</span>, <span>Python</span>, and <span>JavaScript</span>.\n<br><br>\nFeel free to connect with me for any collaboration or opportunities. ",
+    "projects": [
+      {
+        "name": "GitHub Profiles",
+        "description": "Uses GitHub Api to fetch details of a user",
+        "link": "https://github.com/Chandrashekher1/Web-Dev-Practice/tree/master/Projects/Github-Profile",
+        "img":"assets/Screenshot 2024-08-15 221728.png"
+      },
+      {
+        "name": "Notes App",
+        "description": "Make multiple note pads with the ability to store them locally on browser",
+        "link": "https://github.com/Chandrashekher1/Web-Dev-Practice/tree/master/Projects/Notes-Apps",
+        "img" : "assets/Screenshot 2024-08-18 214606.png"
+      },
+      {
+        "name": "Insect Catch Game",
+        "description": "Small Game to catch as many insects present on th screen",
+        "link": "https://github.com/Chandrashekher1/Web-Dev-Practice/tree/master/Projects/Insect-Catch-Game",
+        "img":"assets/Screenshot 2024-08-18 215019.png"
+      },
+      {
+        "name": "Todo lists",
+        "description": "Create your own to do lists",
+        "link": "https://github.com/Chandrashekher1/Web-Dev-Practice/tree/master/Projects/Todo-List",
+        "img":"assets/Screenshot 2024-08-18 215215.png"
+      },
+      {
+        "name": "Password Generator",
+        "description": "Create random Passwords of variable length ",
+        "link": "https://github.com/Chandrashekher1/Web-Dev-Practice/tree/master/Projects/Timer",
+        "img":"assets/Screenshot 2024-08-18 215735.png"
+      }
+  
+    ]
+  }
