@@ -1,5 +1,7 @@
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body{
@@ -86,7 +88,7 @@ body{
     animation: slideRight 1s ease forwards;
 }
 .logo span{
-    color: yellow;
+    color: #0ef;
 }
 
 @keyframes slideRight{
@@ -315,7 +317,7 @@ body{
     /* cursor: pointer; */
 }
 .about-text p span{
-    color: #FFD700;
+    color: #007bff;
 }
 .about-text p:hover{
     color:#ededed;
@@ -359,7 +361,7 @@ body{
     text-align: center;
     font-size: 30px;
     font-weight: 1600;
-    color: yellow;
+    color: #0ef;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .services{
@@ -447,7 +449,7 @@ body{
     5px 5px 40px #081b29; 
 }
 .Ph1{
-    color: yellow;
+    color: #0ef;
     font-size: 50px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
@@ -537,7 +539,7 @@ body{
 }
 .contact h1{
     font-size: 50px;
-    color: yellow;
+    color:#3498db;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .container-con{
@@ -702,11 +704,17 @@ body{
 
 @media(max-width: 395px){
     body{
-        text-align: center;
+        /* text-align: center; */
         /* max-width: 600px; */
+        width: 100%;
+        overflow-x: hidden;
     }
     nav{
         display: none;
+    }
+    header{
+        height: 50px;
+        width: 100px;
     }
     header .open-nav{
         display: block;
@@ -722,9 +730,8 @@ body{
     header .open-nav:focus{
         outline: none;
     }
-    .logo{
-        font-size: 1rem;
-        padding-left: 10px;
+    .head a{
+        font-size: 20px;
     }
     .mobile-nav{
         display: flex;
@@ -775,52 +782,92 @@ body{
     }
     .Home{
         flex-direction: column-reverse;
-        /* height: 100vh; */
+        height: 200vh;
         width: 100%;
+        
     }
     .Home img{
-        width: 300px;
-        height: 300px;   
+        width: 200px;
+        height: 200px;   
+    }
+    .Home .home-contact{
+        margin: auto;
+    }
+    .home-contact h3{
+        font-size: 18px;
     }
     .home-contact h1{
-        font-size: 36px;
+        font-size: 26px;
     }
-    .about{
-        height: 160vh;
+    #about{
         width: 100%;
-        flex-direction: column;
-        box-shadow: none;
-       
+
+    }
+    .about h2{
+        margin-top: 50px;
+        font-size: 40px;
     }
     .about img{
-        margin-top: 200px;
+        margin-top: 100px;
+        width: 200px;
+        height: 200px;
     }
-    .about p{
+    .about-text p{
         border: none;
-        letter-spacing: 2px;
-        font-size: 25px;
+        letter-spacing: 1px;
+        font-size: 1px;
+        text-align: center;
+        margin-left: 65px;
     }
-    .skill{
-        box-shadow: none;
-        height: 200vh;
-        width: 100vw;
+    #skill{
+        height: 100vh;
+        width: 100%;
     }
-    .skill h1{
-        font-size: 50px;
+    #skill h1{
+        font-size: 30px;
     }
-    .skill .using,.learning img{
-       display: flex;
-       flex-wrap: wrap;
-       
+    #services h2{
+        font-size: 20px;
     }
-    .contact{
-        height: 50vh;
+    .using img{
+        width: 50px;
+        height: 50px;
     }
-    .contact p{
-        font-size: 25px;
+    .using h4{
+        font-size: 15px;
+    }
+    .learning h4{
+        font-size: 15px;
+    }
+    .learning img{
+        width: 50px;
+        height: 50px;
+    }
+   #project{
+    box-shadow: none;
+    width: 100%;
+   }
+   .Ph1{
+        font-size: 30px;
+        margin-top: 1em;
+   }
+   #contact{
+    height: 100vh;
+    width: 100%;
+   }
+    #contact h1{
+        margin: 30px;
+        font-size: 30px;
+    }
+    #contact p{
+        font-size: 20px;
     }
     .footer{
-        height: 100px;
+        bottom: auto;
+        width: 100vw;
+        height: 100vh;
+        margin-left: 2em;
+        padding: 5em 0em;
     }
 }
 
