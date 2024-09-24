@@ -311,7 +311,7 @@ body{
     border: 1px solid cyan;
     padding: 40px 20px;
     border-radius: 50px;
-    font-size: 20px;
+    font-size: 25px;
     letter-spacing: 2px;
     margin-bottom: 4rem;
     /* cursor: pointer; */
@@ -782,7 +782,7 @@ body{
     }
     .Home{
         flex-direction: column-reverse;
-        height: 200vh;
+        height: 100vh;
         width: 100%;
         
     }
@@ -800,28 +800,35 @@ body{
         font-size: 26px;
     }
     #about{
-        width: 100%;
-
+        width: 100vw;
+        height: 200vh;
     }
     .about h2{
-        margin-top: 50px;
+        /* margin-top: 50px; */
+        left: 100px;
         font-size: 40px;
     }
     .about img{
-        margin-top: 100px;
+        /* margin-top: 100px; */
+        margin: auto;
         width: 200px;
         height: 200px;
-    }
-    .about-text p{
-        border: none;
-        letter-spacing: 1px;
-        font-size: 1px;
-        text-align: center;
-        margin-left: 65px;
-    }
-    #skill{
+    }.about-text{
+        /* border: 1px solid ; */
         height: 100vh;
+        
+    }
+    .about .about-text p{
+        font-size: 12px;
+        letter-spacing: 0.5px;
+    }
+
+    #skill{
+        height: 200vh;
         width: 100%;
+    }
+    #skill div{
+        /* flex-wrap: wrap; */
     }
     #skill h1{
         font-size: 30px;
@@ -843,18 +850,26 @@ body{
         width: 50px;
         height: 50px;
     }
-   #project{
-    box-shadow: none;
-    width: 100%;
-   }
-   .Ph1{
+    #project{
+        box-shadow: none;
+        width: 100%;
+    }
+    .Ph1{
         font-size: 30px;
         margin-top: 1em;
-   }
-   #contact{
-    height: 100vh;
-    width: 100%;
-   }
+    }
+   .project div{
+        width:200px;
+    }
+    .project div img{
+        width: 190px;
+        border-radius: 10px;
+
+    }
+    #contact{
+        height: 100vh;
+        width: 100%;
+    }
     #contact h1{
         margin: 30px;
         font-size: 30px;
@@ -880,10 +895,13 @@ body{
     nav{
         display: none;
     }
+    .header{
+        width:100%;
+    }
     header .open-nav{
         display: block;
         background: transparent;
-        font-size: 2rem;
+        font-size: 1rem;
         color: #7FDBFF;
         border: none;
         cursor: pointer;
@@ -895,7 +913,7 @@ body{
         outline: none;
     }
     .logo{
-        font-size: 2rem;
+        font-size: 1rem;
     }
     .mobile-nav{
         display: flex;
@@ -949,43 +967,135 @@ body{
         height: 100vh;
         width: 100%;
     }
-    .about{
-        height: 100vh;
+    .Home img{
+        width: 200px;
+        height: 200px;
+        
+    }
+    .Home .home-contact{
+        margin: auto;
+    }
+    .home-contact h3{
+        font-size: 18px;
+    }
+    .home-contact h1{
+        font-size: 26px;
+    }
+    #about{
         width: 100%;
+        height: 120vh;
         flex-direction: column;
+        border: none;
         box-shadow: none;
-       
+        text-align: center;
+
+    }
+    .about h2{
+        font-size: 40px;
     }
     .about img{
-        margin-top: 100px;
+        width: 200px;
+        height: 200px;
     }
-    .about p{
+    .about .about-text p{
+        /* text-align: center; */
+        max-width: 600px;
+        font-size: 20px;
         border: none;
-        letter-spacing: 2px;
-        font-size: 25px;
-    }
-    .skill{
-        box-shadow: none;
-        height: 100vh;
-        width: 100%;
-    }
-    .skill h1{
-        font-size: 50px;
-    }
-    .skill .using,.learning{
+        margin-left: 10px;
+        letter-spacing: 1px;  
         flex-wrap: wrap;
+    }
+    #skill{
+        height: 150vh;
+        width: 100%;
+        box-shadow: none;
+        align-items: center;
+    }
+    #skill h1{
+        font-size: 30px;
+        margin-top: -10px;
+    }
+    #services div{
+        flex-wrap: wrap;
+    }
+    #services h2{
+        font-size: 20px;
+        margin: 20px 10px;
+    }
+    .using img{
+        width: 70px;
+        height: 70px;
+        margin: 30px 20px;
+        
+    }
+    .using h4{
+        font-size: 15px;
+        margin: auto;
+    }
+    .learning h4{
+        font-size: 15px;
+    }
+    .learning img{
+        width: 70px;
+        height: 70px;
+    }
+    #project{
+        box-shadow: none;
+        width: 100%;
+        
+    }
+    .Ph1{
+        font-size: 30px;
+        margin-top: 1em;
+    }
+    .project div{
+        width:250px;
+       
+    }
+    .project div img{
+        position: relative;
+        width: 200px;
+        border-radius: 10px;
+
     }
     .contact{
         height: 50vh;
     }
+    .contact h1{
+        font-size: 40px;
+    }
     .contact p{
-        font-size: 25px;
+        font-size: 20px;
     }
     .footer{
         height: 100px;
     }
 }
 
+@media(max-width:1024px){
+    .Home img {
+        height: 300px;
+        width: 300px;
+    }
+    .Home .home-contact{
+        margin: auto;
+    }
+    .home-contact h3{
+        font-size: 25px;
+    }
+    .home-contact h1{
+        font-size: 26px;
+    }
+    .contact{
+        height: 50vh;
+    }
+    .footer{
+        position: relative;
+        bottom: 0px;
+        height: 100px;
+    }
+}
 @media(max-width:1600px){
     .contact{
         height: 50vh;

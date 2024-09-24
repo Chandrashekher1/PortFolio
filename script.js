@@ -76,7 +76,7 @@ function HomePage(name,work){
         <img src="assets/photo_2024-08-15_22-51-40.jpg" alt="" class="home-contact">`
 
     Home.innerHTML = HomeHtml
-    startTextAnimation(["2nd Year B.Tech Student", "Front-End Developer", "Tech Enthusiast"]);
+    startTextAnimation(["2nd Year B.Tech Student", "Frontend Developer", "Tech Enthusiast"]);
 }
 
 // About
@@ -180,25 +180,25 @@ function contactPage(){
 // Loader
 
 // Define a function to handle the loader
-// function handleLoader() {// Show the loader
-//     const loader = document.querySelector(".loader");
-//     loader.style.display = "flex";
+function handleLoader() {// Show the loader
+    const loader = document.querySelector(".loader");
+    loader.style.display = "flex";
 
-//     setTimeout(function() {
-//         loader.style.display = "none";
+    setTimeout(function() {
+        loader.style.display = "none";
 
-//         const mainContent = document.querySelector("body");
-//         mainContent.style.overflowX = "hidden";
-//     }, 5000); 
-// }
+        const mainContent = document.querySelector("body");
+        mainContent.style.overflowX = "hidden";
+    }, 5000); 
+}
 
 
-// const logo = document.querySelector('.logo');
-// logo.addEventListener('click', handleLoader);
+const logo = document.querySelector('.logo');
+logo.addEventListener('click', handleLoader);
 
-// document.addEventListener("DOMContentLoaded", function() {
-//     handleLoader();
-// });
+document.addEventListener("DOMContentLoaded", function() {
+    handleLoader();
+});
 
 // Mobile Nav
 
